@@ -1,0 +1,13 @@
+{
+  "name": "musicfestival",
+  "version": "1.0.0",
+  "description": "Practicando Gulp y SASS",
+  "main": "index.js",
+  "repository": "https://github.com/VictorLascares/MusicFestival.git",
+  "author": "Victor Lascares",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
+}
