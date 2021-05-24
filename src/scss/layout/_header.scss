@@ -1,3 +1,33 @@
 .header {
     background-color: $dark;
+
+    .header-content {
+        padding: $separation/2 0;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    h1 {
+        color: $light;
+        text-align: center;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    @include tablet {
+        margin-top: 0;
+    }
+    .nav__link {
+        color: $light;
+        font-size: 2rem;
+        &:hover {
+            color: $primary;
+        }
+    }
 }
