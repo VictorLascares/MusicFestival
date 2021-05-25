@@ -1,0 +1,84 @@
+.lineUp {
+    background-color: $grey;
+    padding: $separation 0;
+    h3, p {
+        text-align: center;
+        color: $dark;
+    }
+    .day {
+        text-transform: uppercase;
+        margin: $separation 0;
+    }   
+}
+.stages-content {
+    @include tablet {
+        @include grid(2, $separation/2);
+    }
+    .stage-name {
+        color: $dark;
+        font-size: 2rem;
+        font-weight: $slim;
+
+        &:after {
+            content: '';
+            width: 20rem;
+            height: 10rem;
+            display: block;
+            margin: 2rem auto 0 auto;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+.stage {
+    background-color: $light;
+    padding-top: $separation/2;
+    border: 5px solid $primary;
+    border-radius: 1rem;
+    &:nth-child(odd) {
+        margin-bottom: 2rem;
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+}
+.webp {
+    .edm .stage-name {
+        &:after {
+            background-image: url(../img/icono_edm.webp);
+        }
+    }
+    .rock .stage-name {
+        &:after {
+            background-image: url(../img/icono_rock.webp);
+        }
+    }
+}
+.no-webp {
+    .edm .stage-name {
+        &:after {
+            background-image: url(../img/icono_edm.png);
+        }
+    }
+    .rock .stage-name {
+        &:after {
+            background-image: url(../img/icono_rock.png);
+        }
+    }
+}
+.calendar {
+    padding: 0;
+    list-style: none;
+    overflow: visible;
+    li {
+        padding: $separation/3;
+        font-weight: $black;
+        span {
+            font-weight: $regular;
+        }
+    }
+}
+.calendar li:nth-child(odd) {
+    background-color: $primary;
+}
