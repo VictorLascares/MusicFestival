@@ -1,47 +1,28 @@
 const galleryImages = document.querySelector('.gallery-images');
-const html = document.querySelector('html');
-let webp; 
 
 document.addEventListener('DOMContentLoaded', () => {
     createGallery();
 }) 
 
 function createGallery() {
-    webp = html.classList.contains('webp');
-    if(webp) {
-        for (let i = 1; i <= 12; i++) {
-            const image = document.createElement('IMG');
-            image.src = `build/img/thumb/${i}.webp`;
-            image.dataset.imageId = i;
-            // Funcion mostrar imagen
-            image.onclick = showImage;
-            const list = document.createElement('LI');
-            list.appendChild(image)
-            galleryImages.appendChild(list);
-        } 
-    } else {
-        for (let i = 1; i <= 12; i++) {
-            const image = document.createElement('IMG');
-            image.src = `build/img/thumb/${i}.jpg`;
-            image.onclick = showImage;
-            const list = document.createElement('LI');
-            list.appendChild(image)
-            galleryImages.appendChild(list);
-        }
-    } 
+    for(let i = 1;i <= 12; i++){
+        const image = document.createElement('IMG');
+        image.src = `build/img/thumb/${i}.webp`;
+        image.dataset.imageId = i;
+        
+        // Funcion mostrar imagen
+        image.onclick = showImage;
+        const list = document.createElement('LI');
+        list.appendChild(image);
+        galleryImages.appendChild(list);
+    }
 }
 
 function showImage(e) {
-    let typeOfImage;
-    if (webp) {
-        typeOfImage = '.webp';
-    } else {
-        typeOfImage = '.jpg';
-    }
     const id = parseInt( e.target.dataset.imageId );
     // Generar la imagen
     const image = document.createElement('IMG');
-    image.src = `build/img/grande/${id}${typeOfImage}`
+    image.src = `build/img/grande/${id}.webp`
 
     const overlay = document.createElement('DIV');
     overlay.appendChild(image);
