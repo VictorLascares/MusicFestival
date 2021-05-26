@@ -12,7 +12,7 @@ function scrollNav() {
             const section = document.querySelector(e.target.attributes.href.value);
 
             section.scrollIntoView({
-                behavior: 'smoot'
+                behavior: 'smooth'
             });
         })
     })
