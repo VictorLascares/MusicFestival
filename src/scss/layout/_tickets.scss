@@ -1,0 +1,20 @@
+.tickets {
+    background-color: $primary;
+    padding: $separation 0;
+    h3 {
+        text-align: center;
+        color: $light;
+    }
+    .container-tickets {
+        @include tablet {
+            @include grid(2, $separation/2);
+        }
+    }
+    .plan {
+        p {
+            color: $light;
+            font-size: 3rem;
+            text-align: center;
+        }
+    }
+}
